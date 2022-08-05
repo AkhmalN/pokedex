@@ -225,6 +225,21 @@ h1 {
   box-shadow: 5px 10px #888888;
 }
 
+.action button{
+  background-color: #F9F5EB;
+  font-weight: bold;
+  color: #7A4495;
+  border-radius: 20px;
+  margin-top: 50px;
+  width: 100px;
+  height : 30px;
+  border: none;
+  cursor: pointer;
+}
+.action{
+  display: flex;
+  justify-content: center;
+}
 
 .card-about img {
   border-radius: 5px 5px 0 0;
@@ -312,11 +327,14 @@ ul {
   justify-content: center;
   font-size: 25px;
   cursor: pointer;
+  border-radius: 10px;
+  margin-right: 5px;
 }
 
 ul.pagination li a {
   text-decoration: none;
-  color: #337ab7;
+  color: #31087B;
+  font-weight: bold;
   font-size: 20px;
 }
 
@@ -329,7 +347,7 @@ ul.pagination li.active {
 
 ul.pagination li a:hover,
 ul.pagination li a.active {
-  color: blue;
+  color: #1C3879;
 }
 
 .page-selection {

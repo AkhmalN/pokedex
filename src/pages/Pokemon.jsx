@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 // import { charmeleon, mewtwo, jolteon, squirtle, umbreon } from '../images';
 import axios from 'axios';
 import { useEffect, useState } from 'react';

@@ -1,4 +1,5 @@
-import react from "react";
+import React from "react";
+import {Link} from 'react-router-dom';
 import { charmeleon, mewtwo, jolteon, squirtle, umbreon } from '../images';
 function Home(params) {
   return (
@@ -58,10 +59,14 @@ function Home(params) {
           </div>
         </div>
       </div>
+      <div className="action">
+        <Link to="/pokemon"><button id="home">View More </button></Link>
+      </div>
       <div className="banner-3">
 
       </div>
     </div>
+
   );
 }
 export default Home;
