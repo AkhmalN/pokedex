@@ -115,7 +115,7 @@ h1 {
 }
 
 .banner-content-top {
-  margin: 50px 100px;
+  margin: 50px 30px;
   display: flex;
   flex-wrap: wrap;
 
@@ -126,7 +126,7 @@ h1 {
   margin: 5px;
   border: 1px solid #ccc;
   text-align: center;
-  width: 300px;
+  width: 250px;
   border-radius: 20px;
   box-shadow: 5px 10px #888888;
   margin-bottom: 50px;

@@ -1,38 +1,49 @@
-import {useParams} from 'react-router-dom';
-import {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function Detailpoke(){
-    const [details, setDetails] = useState({});
-    const params = useParams()
-    const id = params.id;
-    // console.log(params.id);
-    useEffect(() => {
-        axios.get(`https://pokedexbackend.herokuapp.com/pokemon/${id}`)
-      .then((res) => {
-        console.log(res?.data.result,'ress');
-        setDetails(res?.data?.result ?? []);
-        // console.log(setDetails);
+function Detailpoke() {
 
+  const params = useParams()
+  const ID = params.id
+  
+  
+  const [stats, setStats] = useState([]);
+  useEffect(()=>{
+    axios.get(`https://pokedexbackend.herokuapp.com/pokemon/${ID}`)
+    .then(Response=>{
+      setStats(Response.data.result.stats)
+    })
+  },[ID])
+
+
+  const [details, setDetails] = useState([])
+  useEffect(() => {
+    axios.get(`https://pokedexbackend.herokuapp.com/pokemon/${ID}`)
+      .then(Response => {
+        setDetails(Response.data.result ?? [])
+        // console.log(Response.data.result);
       });
+  }, [ID])
 
-    },[id])
-   
-   return(
-      <div className="banner-content-top">
-        {details?.map((mons,id)=> {
+  return (
+    <div className="banner-content-top">
+      <img src={details.image} alt="pokemon" />
+      <div className='info'>
+        <p>Name : {details.name}</p>
+        <p>Abilities : {details.abilities}</p>
+        <p>Stats</p>
+        {stats.map((poke, idx)=>{
           return(
-            <div className="card-pokemon" key={id}>
-                <div className="desc">
-                    <p>{mons.abilities}</p>
-                </div>
+            <div key={idx}>
+              <p>{poke.name} :  {poke.value}</p>
             </div>
-          ); 
+          )
         })}
-        <p> Apa aja</p>
-        <p> Apa aja</p>
+        <p>Types : {details['types']}</p>
       </div>
-   )
+    </div>
+  )
 }
 
 export default Detailpoke
