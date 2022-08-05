@@ -27,22 +27,26 @@ function Detailpoke() {
   }, [ID])
 
   return (
-    <div className="banner-content-top">
+    <div className='banner-wrapper'>
+    <div className="banner-content-pokemon">
       <img src={details.image} alt="pokemon" />
       <div className='info'>
-        <p>Name : {details.name}</p>
-        <p>Abilities : {details.abilities}</p>
-        <p>Stats</p>
-        {stats.map((poke, idx)=>{
-          return(
-            <div key={idx}>
-              <p>{poke.name} :  {poke.value}</p>
+        <h2 className='name-poke'>Name : {details.name}</h2>
+        <p>Abilities :</p>
+        <p className='ab'>{details.abilities}</p>
+        <h4>Stats : </h4>
+        {stats.map((poke, idx) => {
+          return (
+            <div key={idx} className="stats-info">
+              <p className='stats'>{poke.name} :  {poke.value}</p>
             </div>
           )
         })}
         <p>Types : {details['types']}</p>
       </div>
     </div>
+  </div>
+
   )
 }
 

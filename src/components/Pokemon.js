@@ -12,8 +12,7 @@ const Pokemon = ({ pokemons, loading }) => {
       return (
         <div className="card-pokemon" key={idx} >
           <div className='img'>
-            <img src={poke.pictureFront} alt="" />
-            <img src={poke.pictureBack} alt="" />
+          <img src={poke.pictureBack} onPointer={() => (poke.pictureFront)} alt="pokemon"/>
           </div>
           <div className="desc">
             <h5>{idx+1}</h5>
